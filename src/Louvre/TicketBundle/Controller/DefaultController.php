@@ -8,6 +8,6 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('LouvreTicketBundle:Default:index.html.twig');
+        return $this->render('LouvreTicketBundle:Ticket:index.html.twig');
     }
 }
