@@ -56,6 +56,11 @@ class Visitor
      */
     private $reducerate;
 
+    public function __construct()
+    {   
+        $this->date=new\DateTime();
+
+    }
 
     /**
      * Get id

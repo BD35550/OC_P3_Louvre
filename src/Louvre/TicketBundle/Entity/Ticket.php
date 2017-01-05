@@ -3,6 +3,7 @@
 namespace Louvre\TicketBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Ticket
@@ -56,6 +57,11 @@ class Ticket
      */
     private $email;
 
+     public function __construct()
+    {   
+        $this->bookingdate=new\DateTime();
+
+    }
 
     /**
      * Get id
