@@ -17,7 +17,7 @@ class DefaultController extends Controller
     public function indexAction()
     	{
     
-    	$ticket= new Ticket();
+    	/*$ticket= new Ticket();
     	$formBuilder=$this->get('form.factory')->createBuilder(FormType::class, $ticket);
     	
         $formBuilder
@@ -30,8 +30,8 @@ class DefaultController extends Controller
     		->add ('save', SubmitType::class)
             ;
 
-    	$form = $formBuilder->getForm();
-    	return $this->render('LouvreTicketBundle:Ticket:index.html.twig', array('form' => $form->createView(),
-    ));
+    	$form = $formBuilder->getForm();*/
+    	return $this->render('LouvreTicketBundle:Ticket:index.html.twig');
     }
-}
+
+    }

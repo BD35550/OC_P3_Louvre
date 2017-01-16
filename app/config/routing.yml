@@ -5,3 +5,4 @@ louvre_ticket:
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+

@@ -5,6 +5,9 @@
 {% block title %}{{ parent() }} - Index{% endblock %}
 
 {% block body %}
- Premier formulaire de l'accueil
-    {{ form(form) }}
+ <h1> Site pratique pour commander rapidement vos billts d'entrée</h1>
+
+    -Présentation du site<br>
+    -Infos pratiques<br>
+    <a href="{{ path('louvre_ticket_order') }}">Liens vers acheter vos places</a>
 {% endblock %}

@@ -1,3 +1,11 @@
 louvre_ticket_homepage:
     path:     /
     defaults: { _controller: LouvreTicketBundle:Default:index }
+
+louvre_ticket_order:
+    path:     /order/create
+    defaults: { _controller: LouvreTicketBundle:Ticket:orderCreate }
+
+louvre_ticket_order_two:
+    path:     /order/order_two
+    defaults: { _controller: LouvreTicketBundle:Ticket:order_twoCreate }

@@ -1,72 +1,79 @@
 <?php
+// src/Louvre/TicketBundle/Entity/Ticket.php
 
 namespace Louvre\TicketBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
+use Louvre\TicketBundle\Entity\Order;
 
 /**
- * Ticket
- *
- * @ORM\Table(name="ticket")
+ * @ORM\Table(name="table_ticket")
  * @ORM\Entity(repositoryClass="Louvre\TicketBundle\Repository\TicketRepository")
  */
 class Ticket
 {
+
     /**
-     * @var int
-     *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
-     * @var \DateTime
+     * @ORM\Column(name="last_name", type="string", length=255)
      *
-     * @ORM\Column(name="bookingdate", type="datetime")
      */
-    private $bookingdate;
+    protected $lastName;
 
     /**
-     * @var int
+     * @ORM\Column(name="first_name", type="string", length=255)
      *
-     * @ORM\Column(name="quantity", type="integer")
      */
-    private $quantity;
+    protected $firstName;
 
     /**
-     * @var string
+     * @ORM\Column(name="country", type="string")
      *
-     * @ORM\Column(name="type", type="string", length=255)
      */
-    private $type;
+    protected $country;
 
     /**
-     * @var \DateTime
+     * @ORM\Column(name="birth_date", type="date")
      *
-     * @ORM\Column(name="visitdate", type="datetime")
      */
-    private $visitdate;
+    protected $birthDate;
 
     /**
-     * @var string
+     * @ORM\Column(name="reduced", type="boolean")
      *
-     * @ORM\Column(name="email", type="string", length=255)
      */
-    private $email;
+    protected $reduced = false;
 
-     public function __construct()
-    {   
-        $this->bookingdate=new\DateTime();
+    /**
+     * @ORM\Column(name="code", type="string", nullable=true)
+     *
+     */
+    protected $code;
 
-    }
+    /**
+     * @ORM\ManyToOne(targetEntity="Louvre\TicketBundle\Entity\Order", inversedBy="tickets", cascade={"persist"})
+     * @ORM\JoinColumn(name="order_id", referencedColumnName="id")
+     * @Assert\Type("object")
+     */
+    protected $order;
+
+    /**
+     * @ORM\Column(name="used", type="boolean", nullable=true)
+     * @Assert\Type("bool")
+     */
+    protected $used = false;
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -74,123 +81,181 @@ class Ticket
     }
 
     /**
-     * Set bookingdate
+     * Set lastName
      *
-     * @param \DateTime $bookingdate
-     *
-     * @return Ticket
+     * @param string $lastName
      */
-    public function setBookingdate($bookingdate)
+    public function setLastName($lastName)
     {
-        $this->bookingdate = $bookingdate;
-
-        return $this;
+        $this->lastName = $lastName;
     }
 
     /**
-     * Get bookingdate
-     *
-     * @return \DateTime
-     */
-    public function getBookingdate()
-    {
-        return $this->bookingdate;
-    }
-
-    /**
-     * Set quantity
-     *
-     * @param integer $quantity
-     *
-     * @return Ticket
-     */
-    public function setQuantity($quantity)
-    {
-        $this->quantity = $quantity;
-
-        return $this;
-    }
-
-    /**
-     * Get quantity
-     *
-     * @return int
-     */
-    public function getQuantity()
-    {
-        return $this->quantity;
-    }
-
-    /**
-     * Set type
-     *
-     * @param string $type
-     *
-     * @return Ticket
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-
-        return $this;
-    }
-
-    /**
-     * Get type
+     * Get lastName
      *
      * @return string
      */
-    public function getType()
+    public function getLastName()
     {
-        return $this->type;
+        return $this->lastName;
     }
 
     /**
-     * Set visitdate
+     * Set firstName
      *
-     * @param \DateTime $visitdate
-     *
-     * @return Ticket
+     * @param string $firstName
      */
-    public function setVisitdate($visitdate)
+    public function setFirstName($firstName)
     {
-        $this->visitdate = $visitdate;
-
-        return $this;
+        $this->firstName = $firstName;
     }
 
     /**
-     * Get visitdate
-     *
-     * @return \DateTime
-     */
-    public function getVisitdate()
-    {
-        return $this->visitdate;
-    }
-
-    /**
-     * Set email
-     *
-     * @param string $email
-     *
-     * @return Ticket
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
-     * Get email
+     * Get firstName
      *
      * @return string
      */
-    public function getEmail()
+    public function getFirstName()
     {
-        return $this->email;
+        return $this->firstName;
     }
+
+    /**
+     * Set country
+     *
+     * @param string $country
+     */
+    public function setCountry($country)
+    {
+        $this->country = $country;
+    }
+
+    /**
+     * Get country
+     *
+     * @return string
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * Set birthDate
+     *
+     * @param \DateTime $birthDate
+     */
+    public function setBirthDate(\DateTime $birthDate)
+    {
+        $this->birthDate = $birthDate;
+    }
+
+    /**
+     * Get birthDate
+     *
+     * @return \DateTime
+     */
+    public function getBirthDate()
+    {
+        return $this->birthDate;
+    }
+
+    /**
+     * Set reduced
+     *
+     * @param boolean $reduced
+     */
+    public function setReduced($reduced)
+    {
+        $this->reduced = $reduced;
+    }
+
+    /**
+     * Get reduced
+     *
+     * @return boolean
+     */
+    public function getReduced()
+    {
+        return $this->reduced;
+    }
+
+    /**
+     * Set code
+     *
+     * @param string $code
+     */
+    public function setCode($code)
+    {
+        $this->code = $code;
+    }
+
+    /**
+     * Get code
+     *
+     * @return string
+     */
+    public function getcode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * Generate code
+     */
+    public function generatecode()
+    {
+        $code = 'AZHETF';
+        $this->validationCode = $code;
+    }
+
+    /**
+     * Set used
+     *
+     * @param boolean $used
+     */
+    public function setUsed($used)
+    {
+        $this->used = $used;
+    }
+
+    /**
+     * Get used
+     *
+     * @return boolean
+     */
+    public function getUsed()
+    {
+        return $this->used;
+    }
+
+    /**
+     * Set order
+     *
+     * @param \Louvre\TicketBundle\Entity\Order $order
+     */
+    public function setOrder(Order $order)
+    {
+        $this->order = $order;
+    }
+
+    /**
+     * Get order
+     *
+     * @return \Louvre\TicketBundle\Entity\Order
+     */
+    public function getOrder()
+    {
+        return $this->order;
+    }
+
+    /**
+     * Set TicketsOrder
+     */
+    public function setTicketsOrder()
+    {
+
+
+        }
+
 }
-
