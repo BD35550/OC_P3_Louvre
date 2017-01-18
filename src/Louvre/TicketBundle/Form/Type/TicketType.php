@@ -26,7 +26,7 @@ $builder
 'label'             => 'Pays',
 'preferred_choices' => ['FR'],
 ])
-->add('birthDate', BirthdayType::class, ['label'    => 'Date de naissance'])
+->add('birthDate', BirthdayType::class, ['label'    => 'Date de naissance', 'format' => 'dd/MM/y',])
 ->add('reduced',   CheckboxType::class, [
 'required' => false,
 'label'    => 'Tarif réduit',

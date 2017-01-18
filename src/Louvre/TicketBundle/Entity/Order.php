@@ -181,18 +181,6 @@ class Order
         return $this->tickets;
     }
 
-    // Custom functions :
-
-    /**
-     * Get nbTickets
-     *
-     * @return integer
-     */
-    public function getNumTickets()
-    {
-        return count($this->tickets);
-    }
-
     /**
      * Set TicketsOrder
      */
@@ -201,5 +189,14 @@ class Order
         foreach ($this->tickets as $ticket) {
             $ticket->setOrder($this);
         }
+    }
+    /**
+     * Get nbTickets
+     *
+     * @return integer
+     */
+    public function getNumTickets()
+    {
+            return count($this->tickets);
     }
 }

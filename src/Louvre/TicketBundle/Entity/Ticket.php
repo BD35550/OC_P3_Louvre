@@ -65,12 +65,6 @@ class Ticket
     protected $order;
 
     /**
-     * @ORM\Column(name="used", type="boolean", nullable=true)
-     * @Assert\Type("bool")
-     */
-    protected $used = false;
-
-    /**
      * Get id
      *
      * @return integer
@@ -210,26 +204,6 @@ class Ticket
     }
 
     /**
-     * Set used
-     *
-     * @param boolean $used
-     */
-    public function setUsed($used)
-    {
-        $this->used = $used;
-    }
-
-    /**
-     * Get used
-     *
-     * @return boolean
-     */
-    public function getUsed()
-    {
-        return $this->used;
-    }
-
-    /**
      * Set order
      *
      * @param \Louvre\TicketBundle\Entity\Order $order
@@ -257,5 +231,33 @@ class Ticket
 
 
         }
+
+    /**
+     * Get price
+     *
+     * @return integer
+     */
+    public function getPrice()
+    {
+        $now = new \DateTime('now');
+        $age = $now->diff($this->birthDate)->y;
+
+        if ($age < 4) {
+            $price = '0';
+        } elseif ($age < 12) {
+            $price = '8';
+        } elseif ($this->reduced) {
+            $price = '10';
+        } elseif ($age > 60) {
+            $price = '12';
+        } else {
+            $price = '16';
+        }
+
+        if ($this->order->getTicketsType() === 'demi-journée') {
+            return $price / 2;
+        }
+        return $price;
+    }
 
 }

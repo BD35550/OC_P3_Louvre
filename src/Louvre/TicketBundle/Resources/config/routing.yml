@@ -9,3 +9,7 @@ louvre_ticket_order:
 louvre_ticket_order_two:
     path:     /order/order_two
     defaults: { _controller: LouvreTicketBundle:Ticket:order_twoCreate }
+
+louvre_ticket_order_tree:
+    path:     /order/order_tree
+    defaults: { _controller: LouvreTicketBundle:Ticket:order_treeCreate }

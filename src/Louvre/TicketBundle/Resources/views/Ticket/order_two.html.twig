@@ -1,5 +1,5 @@
 {# src/Louvre/TicketBundle/Resources/views/Ticket/order_tow.html.twig #}
-{% extends "::layout.html.twig" %}
+{% extends "LouvreTicketBundle:Ticket:index.html.twig" %}
 
 {% block title %}
     Billetterie - {{ parent() }}
@@ -7,12 +7,12 @@
 
 {% block body %}
 
-    <h1>Etape 2 - Saisie de vos inforamtions nominatives</h1>
+    <h1>Etape 2 - Saisie de vos informations nominatives</h1>
 
     {% for type, messages in app.session.flashbag.all %}
         {% for message in messages %}
             {%if type == 'error'%} {% set type = 'danger' %} {%endif%}
-            <div class="alert alert-{{ type }}">
+            <div class="alert">
                 {{ message|raw }}
             </div>
         {% endfor %}
