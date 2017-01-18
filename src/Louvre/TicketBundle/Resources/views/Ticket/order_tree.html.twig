@@ -8,46 +8,22 @@
 
    <h2>Paiement</h2>
 
-   {% for type, messages in app.session.flashbag.all %}
-     {% for message in messages %}
-       {%if type == 'error'%} {% set type = 'danger' %} {%endif%}
-         <div class="alert alert-{{ type }}">
-             {{ message|raw }}
-         </div>
-     {% endfor %}
-   {% endfor %}
-
-   <div class="panel panel-default">
-       <div class="panel-heading">
-         <h3 class="panel-title">Commande {{ order.id }} :</h3>
-       </div>
-       <ul class="list-group">
-         <li class="list-group-item">Nombre de billets : {{ order.getNbTickets }}</li>
-         <li class="list-group-item">Prix total : {{ order.getTotalAmount // 100 }}€</li>
-     </ul>
-     <div class="panel-heading">
-         <h3 class="panel-title">Liste des billets</h3>
-       </div>
-       <ul class="list-group">
-         {% for ticket in order.tickets %}
-               <li class="list-group-item"><span class="ticket-number">{{ loop.index }}</span>{{ ticket.name }} {{ ticket.firstName }} : {{ ticket.price // 100 }}€</li>
-           {% endfor %}
-     </ul>
-   </div>
-
 
    <form class="stripe-button-container text-center" method="POST">
-     <script
-     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-     data-key="pk_test_LYib6NbE4DpiDsxFOrkbtQN0"
-     data-amount="{{ order.totalAmount }}"
-     data-name="Louvre Billetterie"
-     data-description="Commande en ligne"
-data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-     data-locale="auto"
-     data-zip-code="false"
-     data-currency="eur">
-     </script>
+
+       <form  method="POST">
+           <script
+                   src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                   data-key="pk_test_LYib6NbE4DpiDsxFOrkbtQN0"
+                   data-amount="2000"
+                   data-name="Demo Site"
+                   data-description="2 widgets"
+                   data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                   data-locale="auto"
+                   data-zip-code="true"
+                   data-currency="eur">
+           </script>
+       </form>
    </form>
 
    <script type="text/javascript">
