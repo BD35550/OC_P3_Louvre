@@ -29,12 +29,12 @@
     <div class="container">
         <div class="dropdown">
             <button type="button" class="navbar-toggle" data-toggle="dropdown"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-            <!-- <a data-toggle="dropdown" href="">Dropdown trigger</a> -->
+            <!-- <a data-toggle="dropdown" href="#">Dropdown trigger</a> -->
             <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                <li><a href="head" class="active">Accueil</a></li>
-                <li><a href="about">Infos pratiques</a></li>
-                <li><a href="themes">Le Louvre site officiel</a></li>
-                <li><a href="contact">Mentions légales</a></li>
+                <li><a href="{{ path('louvre_ticket_homepage') }}">Accueil</a></li>
+                <li><a href="{{ path('louvre_ticket_order') }}">Réserver</a></li>
+                <li><a href="{{ path('louvre_ticket_infos') }}">Informations pratiques</a></li>
+                <li><a href="{{ path('louvre_ticket_mentions') }}">Mentions légales</a></li>
             </ul>
         </div>
     </div>
@@ -43,7 +43,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">   
+            <div class="col-md-10  col-md-offset-1  text-center">
 
                 <!-- Site Title, your name, HELLO msg, etc. -->
                 <h1 class="title">Billeterie du Musée du Louvre</h1>
@@ -62,20 +62,25 @@
 
 
 
-<footer>
-
-
-</footer>
 
 
 
 
-{% block javascripts %}
-    <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-{% endblock %}
 
 
+
+
+
+    <footer class="col-lg-12 col-md-12 ">
+        <p>Projet de Billetterie OC - BreizhWebcom</p>
+        <p>	&copy;2016 </p>
+    </footer>
 </body>
-
+{% block javascripts %}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="assets/js/modernizr.custom.72241.js"></script>
+    <!-- Custom template scripts -->
+    <script src="{{ asset('bundles/louvreticket/js/magister.js')}}"></script>
+{% endblock %}
 </html>

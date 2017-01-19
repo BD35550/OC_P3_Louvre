@@ -1,5 +1,5 @@
 html {
-	background:#505D6E url(../image/louvre-background.jpg) no-repeat center center fixed; 
+	background:#505D6E url(../image/louvre-background.jpg) no-repeat center center fixed;
 	min-height:100%;
 	-webkit-background-size: cover;
 	   -moz-background-size: cover;
@@ -9,7 +9,7 @@ html {
 
 body {
 	background:transparent;
-	min-height:100%; 	
+	min-height:100%;
 	-webkit-font-smoothing: antialiased;
 	-webkit-overflow-scrolling: touch;
 	line-height: 1.5em;
@@ -22,6 +22,18 @@ body {
 
 h1{
 	color:white;
+}
+
+footer {
+
+
+
+    color:white;
+	background-color:black;
+
+	padding-top: 25px;
+
+
 }
 /********************************************************/
 /*                    Navigation bar                    */
@@ -348,24 +360,21 @@ a:hover, a:active { color:#fff; text-decoration: underline; }
     }
 }
 
-/*adaptation des formulaires*/
-
-#louvre_ticketbundle_order_bookingDate {
-	display:row;
+/*perso*/
+footer{
+    width:100%}
+.mentions{
+    background-color: rgba(152,152,152,.6);
+    text-align:left;
+    padding: 10px;
 }
+/*adaptation des formulaires*/
 
 .well{
 	background-color: rgba(152,152,152,.6);
 }
 
-.control-label{
-	text-align: left;
-}
 
-@media all and (max-width: 769px){
-#louvre_ticketbundle_order_bookingDate, select{
-	display:inline-block;
-	max-width:30%;
-}
 
-}
+
+

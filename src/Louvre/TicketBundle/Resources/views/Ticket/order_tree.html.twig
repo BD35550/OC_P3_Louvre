@@ -1,4 +1,5 @@
-{# src/Louvre/TicketBundle/Resources/views/Ticket/order_buy.html.twig #} {% extends "LouvreAppBundle::layout.html.twig" %}
+{# src/Louvre/TicketBundle/Resources/views/Ticket/order_tree.html.twig #}
+{% extends "LouvreTicketBundle:Ticket:index.html.twig" %}
 
 {% block title %}
    Billetterie - {{ parent() }}
@@ -11,26 +12,23 @@
 
    <form class="stripe-button-container text-center" method="POST">
 
-       <form  method="POST">
+       <form action="/your-server-side-code" method="POST">
            <script
                    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                    data-key="pk_test_LYib6NbE4DpiDsxFOrkbtQN0"
                    data-amount="2000"
-                   data-name="Demo Site"
-                   data-description="2 widgets"
-                   data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                   data-name="Billeterie du Louvre"
+                   data-description="Paiement"
+                   data-image="{{ asset('bundles/louvreticket/image/louvre-stripe.jpg')}}"
                    data-locale="auto"
-                   data-zip-code="true"
+                   data-zip-code="false"
                    data-currency="eur">
            </script>
        </form>
    </form>
 
-   <script type="text/javascript">
-       jQuery(document).ready(function() {
-           jQuery('.stripe-button-el').addClass('btn btn-success stripe-button').removeClass('stripe-button-el');
-           jQuery('.stripe-button span').text('Paiement par carte bancaire');
-       })
-   </script>
+
+
+
 
 {% endblock %}

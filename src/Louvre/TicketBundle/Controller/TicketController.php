@@ -33,6 +33,7 @@ class TicketController extends Controller
         }
 
         return $this->render('LouvreTicketBundle:Ticket:order_create.html.twig', ['form' => $form->createView()]);
+
     }
 
     public function order_twoCreateAction(Request $request)
@@ -51,15 +52,24 @@ class TicketController extends Controller
 
             $request->getSession()->getFlashBag()->add('info','');
             $id = $ticket->getId();
-            return $this->redirectToRoute('louvre_ticket_order_tree');
+            return $this->redirectToRoute('louvre_ticket_homepage', compact('id','order'));
         }
 
         return $this->render('LouvreTicketBundle:Ticket:order_two.html.twig', ['form' => $form->createView()]);
     }
 
-    public function order_treeCreateAction(Order $order)
+    public function order_treeCreateAction()
     {
-
         return $this->render('LouvreTicketBundle:Ticket:order_tree.html.twig');
+    }
+
+    public function infosCreateAction()
+    {
+        return $this->render('LouvreTicketBundle:Ticket:infos.html.twig');
+    }
+
+    public function mentionsCreateAction()
+    {
+        return $this->render('LouvreTicketBundle:Ticket:mentions.html.twig');
     }
 }

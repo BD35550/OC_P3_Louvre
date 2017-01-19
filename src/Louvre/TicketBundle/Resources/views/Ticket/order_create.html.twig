@@ -7,7 +7,7 @@
 
 
 {% block body %}
-    <h1>Etape 1 - Date et nombre d'entrée(s)</h1>
+    <h2>Etape 1 - Date et nombre d'entrée(s)</h2>
 
     {% for type, messages in app.session.flashbag.all %}
         {% for message in messages %}
@@ -25,15 +25,11 @@
 
 </div>
 
-
 {% endblock %}
 
 {% block javascripts %}
-    {{ parent() }}
-    <script src="{{ asset('bundles/louvreticket/js/jquery-ui/jquery-ui.min.js') }}"></script>
-    <script src="{{ asset('bundles/louvreticket/js/jquery-ui/jquery.ui.datepicker-fr.js') }}"></script>
-    <script src="{{ asset('bundles/louvreticket/js/jtsage-datebox.min.js') }}" type="text/javascript"></script>
-    <script src="http://cdn.jtsage.com/jtsage-datebox/i18n/jtsage-datebox.i18n.fr.utf8.min.js" type="text/javascript" ></script>
-    <script src="{{ asset('bundles/louvreticket/js/informations.js') }}"></script>
+
+
+
 {% endblock %}
 

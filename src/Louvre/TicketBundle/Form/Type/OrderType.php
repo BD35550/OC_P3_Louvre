@@ -35,7 +35,7 @@ class OrderType extends AbstractType
                 ],
                 'label'    => 'Type de billets'
             ])
-            ->add('numTickets',         ChoiceType::class, [
+            ->add('quantity',         ChoiceType::class, [
                 'placeholder' => '...',
                 'choices'     => array_combine(range(1,10),range(1,10)),
                 'label'       => 'Nombre de billet(s)',

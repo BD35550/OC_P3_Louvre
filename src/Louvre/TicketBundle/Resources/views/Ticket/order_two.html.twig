@@ -1,4 +1,4 @@
-{# src/Louvre/TicketBundle/Resources/views/Ticket/order_tow.html.twig #}
+{# src/Louvre/TicketBundle/Resources/views/Ticket/order_two.html.twig #}
 {% extends "LouvreTicketBundle:Ticket:index.html.twig" %}
 
 {% block title %}
@@ -7,7 +7,7 @@
 
 {% block body %}
 
-    <h1>Etape 2 - Saisie de vos informations nominatives</h1>
+    <h2>Etape 2 - Saisie de vos informations nominatives</h2>
 
     {% for type, messages in app.session.flashbag.all %}
         {% for message in messages %}

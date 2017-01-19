@@ -28,10 +28,10 @@ class Order
     protected $bookingDate;
 
     /**
-     * @ORM\Column(name="mail", type="string", length=255, nullable=true)
+     * @ORM\Column(name="quantity", type="integer")
      *
      */
-    protected $mail;
+    protected $quantity;
 
     /**
      * @ORM\Column(name="visit_date", type="datetime")
@@ -92,23 +92,23 @@ class Order
     }
 
     /**
-     * Set mail
+     * Set quantity
      *
-     * @param string $mail
+     * @param integer $quantity
      */
-    public function setMail($mail)
+    public function setQuantity($quantity)
     {
-        $this->mail = $mail;;
+        $this->quantity = $quantity;;
     }
 
     /**
-     * Get mail
+     * Get quantity
      *
-     * @return string
+     * @return integer
      */
-    public function getMail()
+    public function getQuantity()
     {
-        return $this->mail;
+        return $this->quantity;
     }
 
     /**
@@ -189,14 +189,5 @@ class Order
         foreach ($this->tickets as $ticket) {
             $ticket->setOrder($this);
         }
-    }
-    /**
-     * Get nbTickets
-     *
-     * @return integer
-     */
-    public function getNumTickets()
-    {
-            return count($this->tickets);
     }
 }
