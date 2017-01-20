@@ -5,34 +5,33 @@
 {% block title %}{{ parent() }} - Index{% endblock %}
 
 {% block body %}
-<!-- Main (Home) section -->
-<section class="section" id="head">
-   
-            
-                <div class="col-md-5 col-lg-5 col-md-offset-1 col-lg-offset-1">
-                <div class="thumbnail">
-                    <img src="{{ asset('bundles/louvreticket/image/louvre-info2.jpg')}}">
-                    <div class="caption">
-                        <h3>Infos pratiques</h3>
-                        <p>Tout ce qu'il faut savoir pour préparer votre visite et votre réservation</p>
-                        <p><a href="{{ path('louvre_ticket_infos') }}" class="btn btn-primary" role="button">Lire +</a> </p>
-                    </div>
-                </div>
-                </div>
-            <div class="col-md-5 col-lg-5 col-md-offset-1 col-lg-offset-1">
-                <div class="thumbnail">
-                    <img src="{{ asset('bundles/louvreticket/image/louvre-billeterie2.jpg')}}"">
-                    <div class="caption">
-                        <h3>Réserver</h3>
-                        <p>En quelques clics vous effecturez votre réservation et profiter d'un accès privilégié</p>
-                        <p><a href="{{ path('louvre_ticket_order') }}" class="btn btn-primary" role="button">Je réserve</a> </p>
-                    </div>
+    <!-- Main (Home) section -->
+    <section class="section" id="head">
+
+
+        <div class="col-md-5 col-lg-5 col-md-offset-1 col-lg-offset-1">
+            <div class="thumbnail">
+                <img src="{{ asset('bundles/louvreticket/image/louvre-billeterie2.jpg') }}"">
+                <div class="caption">
+                    <h3>Réserver</h3>
+                    <p>En quelques clics vous effecturez votre réservation et profiterez d'un accès privilégié</p>
+                    <p><a href="{{ path('louvre_ticket_order') }}" class="btn btn-primary" role="button">Je réserve</a>
+                    </p>
                 </div>
             </div>
-                
-            </div> 
-      
-    
-</section>
- 
+        </div>
+        <div class="col-md-5 col-lg-5 col-md-offset-1 col-lg-offset-1">
+            <div class="thumbnail">
+                <img src="{{ asset('bundles/louvreticket/image/louvre-info2.jpg') }}">
+                <div class="caption">
+                    <h3>Infos pratiques</h3>
+                    <p>Tout ce qu'il faut savoir pour préparer votre visite et votre réservation</p>
+                    <p><a href="{{ path('louvre_ticket_infos') }}" class="btn btn-primary" role="button">Lire +</a></p>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
 {% endblock %}
