@@ -46,6 +46,12 @@ class Order
     protected $ticketsType;
 
     /**
+     * @ORM\Column(name="mail", type="string", length=255, nullable=true)
+     * @Assert\Email()
+     */
+    protected $mail;
+
+    /**
      * @var ArrayCollection
      * @ORM\OneToMany(targetEntity="Louvre\TicketBundle\Entity\Ticket", mappedBy="order", cascade={"persist"})
      *
@@ -150,7 +156,26 @@ class Order
     {
         return $this->ticketsType;
     }
+  
+    /**
+     * Set mail
+     *
+     * @param string $mail
+     */
+    public function setMail($mail)
+    {
+        $this->mail = $mail;;
+    }
 
+    /**
+     * Get mail
+     *
+     * @return string
+     */
+    public function getMail()
+    {
+        return $this->mail;
+    }
     /**
      * Add ticket
      *
