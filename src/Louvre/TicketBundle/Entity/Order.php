@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Table(name="table_order")
+ * @ORM\Table(name="louvre_order")
  * @ORM\Entity(repositoryClass="Louvre\TicketBundle\Repository\OrderRepository")
 
  */
@@ -184,6 +184,7 @@ class Order
     public function addTicket(Ticket $ticket)
     {
         $this->tickets[] = $ticket;
+        $ticket->setOrder($this);
     }
 
     /**
@@ -206,13 +207,4 @@ class Order
         return $this->tickets;
     }
 
-    /**
-     * Set TicketsOrder
-     */
-    public function setTicketsOrder()
-    {
-        foreach ($this->tickets as $ticket) {
-            $ticket->setOrder($this);
-        }
-    }
 }

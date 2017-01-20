@@ -21,7 +21,7 @@ class OrderType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('bookingDate',         DateType::class, [
+            ->add('visitDate',         DateType::class, [
                 'label' => 'Choisissez votre jour de visite',
                 'data'  => new \Datetime(),
                 'format' => 'dd/MM/y',
@@ -40,20 +40,13 @@ class OrderType extends AbstractType
                 'placeholder' => '...',
                 'choices'     => array_combine(range(1,10),range(1,10)),
                 'label'       => 'Nombre de billet(s)',
-                'mapped'      => false,
+
             ])
             ->add('mail',      TextType::class, ['label'        => 'Courriel'])
 
             ->add('Etape 2',              SubmitType::class)
 
-            /*->add('bookingDate', DateType::class, [
-                'label' => 'Choisissez votre jour de visite',
-                'html5' => true,
-                'widget' => 'single_text',
-                'format'  => 'dd/MM/yyyy',
-                'model_timezone' => 'Europe/Paris',
-                'attr' => ['class' => 'datepicker', 'readonly' => 'readonly'],
-            ])*/
+
         ;
     }
 

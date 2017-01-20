@@ -20,16 +20,11 @@ class TicketController extends Controller
 
         $order = new Order();
         $form = $this->get('form.factory')->create(OrderType::class, $order);
+        $form->handleRequest($request);
 
-
-        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
-            $order->setTicketsOrder();
-            $em->persist($order);
-            $em->flush();
-
-            $request->getSession()->getFlashBag()->add('info','');
-            $id = $order->getId();
-            return $this->redirectToRoute('louvre_ticket_order_two', compact('id','order'));
+        if ($form->isSubmitted() && $form->isValid()) {
+            $request->getSession()->set('order',$order);
+            return $this->redirectToRoute('louvre_ticket_order_two');
         }
 
         return $this->render('LouvreTicketBundle:Ticket:order_create.html.twig', ['form' => $form->createView()]);
@@ -40,19 +35,18 @@ class TicketController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $ticketRepo = $em->getRepository('LouvreTicketBundle:Ticket');
-
+        $order=$request->getSession()->get('order');
         $ticket = new Ticket();
         $form = $this->get('form.factory')->create(TicketType::class, $ticket);
 
-
-        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
-            $ticket->setTicketsOrder();
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $order->addTicket($ticket);
+            $em->persist($order);
             $em->persist($ticket);
             $em->flush();
 
-            $request->getSession()->getFlashBag()->add('info','');
-            $id = $ticket->getId();
-            return $this->redirectToRoute('louvre_ticket_homepage', compact('id','order'));
+            return $this->redirectToRoute('louvre_ticket_homepage');
         }
 
         return $this->render('LouvreTicketBundle:Ticket:order_two.html.twig', ['form' => $form->createView()]);

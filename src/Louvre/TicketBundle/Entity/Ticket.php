@@ -5,10 +5,10 @@ namespace Louvre\TicketBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-use Louvre\TicketBundle\Entity\Order;
+
 
 /**
- * @ORM\Table(name="table_ticket")
+ * @ORM\Table(name="louvre_ticket")
  * @ORM\Entity(repositoryClass="Louvre\TicketBundle\Repository\TicketRepository")
  */
 class Ticket
@@ -59,7 +59,6 @@ class Ticket
 
     /**
      * @ORM\ManyToOne(targetEntity="Louvre\TicketBundle\Entity\Order", inversedBy="tickets", cascade={"persist"})
-     * @ORM\JoinColumn(name="order_id", referencedColumnName="id")
      * @Assert\Type("object")
      */
     protected $order;
