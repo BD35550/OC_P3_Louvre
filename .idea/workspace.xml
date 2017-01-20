@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9a3efe03-9c75-448c-a015-148c851a198f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Louvre/TicketBundle/Entity/Order.php" afterPath="$PROJECT_DIR$/src/Louvre/TicketBundle/Entity/Order.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Louvre/TicketBundle/Form/Type/OrderType.php" afterPath="$PROJECT_DIR$/src/Louvre/TicketBundle/Form/Type/OrderType.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,12 +21,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="infos.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Louvre/TicketBundle/Resources/views/Ticket/infos.html.twig">
+      <file leaf-file-name="OrderType.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Louvre/TicketBundle/Form/Type/OrderType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="30" />
-              <folding />
+            <state relative-caret-position="456">
+              <caret line="36" column="47" lean-forward="true" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
+              <folding>
+                <element signature="e#49#89#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,17 +97,17 @@
         <entry file="file://$PROJECT_DIR$/src/Louvre/TicketBundle/Controller/TicketController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+              <caret line="27" column="23" lean-forward="false" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Order.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Order.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Louvre/TicketBundle/Entity/Order.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="158" column="2" lean-forward="false" selection-start-line="158" selection-start-column="2" selection-end-line="158" selection-end-column="2" />
+            <state relative-caret-position="478">
+              <caret line="173" column="7" lean-forward="false" selection-start-line="173" selection-start-column="7" selection-end-line="173" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -171,11 +174,11 @@
         <option value="$PROJECT_DIR$/src/Louvre/TicketBundle/Resources/views/Ticket/infos.html.twig" />
         <option value="$PROJECT_DIR$/src/Louvre/TicketBundle/Controller/TicketController.php" />
         <option value="$PROJECT_DIR$/src/Louvre/TicketBundle/Resources/views/Ticket/order_create.html.twig" />
-        <option value="$PROJECT_DIR$/src/Louvre/TicketBundle/Form/Type/OrderType.php" />
         <option value="$PROJECT_DIR$/src/Louvre/TicketBundle/Resources/views/Ticket/mentions.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/web/bundles/louvreticket/css/magister.css" />
         <option value="$PROJECT_DIR$/src/Louvre/TicketBundle/Entity/Order.php" />
+        <option value="$PROJECT_DIR$/src/Louvre/TicketBundle/Form/Type/OrderType.php" />
       </list>
     </option>
   </component>
@@ -694,12 +697,12 @@
       <workItem from="1484729842727" duration="6403000" />
       <workItem from="1484814224352" duration="8815000" />
       <workItem from="1484829581004" duration="10180000" />
-      <workItem from="1484900942986" duration="642000" />
+      <workItem from="1484900942986" duration="883000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73438000" />
+    <option name="totallyTimeSpent" value="73679000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -970,14 +973,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Louvre/TicketBundle/Form/Type/OrderType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="37" column="39" lean-forward="false" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Louvre/TicketBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -1053,16 +1048,26 @@
     <entry file="file://$PROJECT_DIR$/src/Louvre/TicketBundle/Controller/TicketController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+          <caret line="27" column="23" lean-forward="false" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Louvre/TicketBundle/Entity/Order.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="158" column="2" lean-forward="false" selection-start-line="158" selection-start-column="2" selection-end-line="158" selection-end-column="2" />
+        <state relative-caret-position="478">
+          <caret line="173" column="7" lean-forward="false" selection-start-line="173" selection-start-column="7" selection-end-line="173" selection-end-column="7" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Louvre/TicketBundle/Form/Type/OrderType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="36" column="47" lean-forward="true" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
+          <folding>
+            <element signature="e#49#89#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

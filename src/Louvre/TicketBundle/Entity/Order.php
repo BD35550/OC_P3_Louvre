@@ -156,7 +156,7 @@ class Order
     {
         return $this->ticketsType;
     }
-  
+
     /**
      * Set mail
      *
